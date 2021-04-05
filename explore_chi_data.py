@@ -34,9 +34,10 @@ pgray = '#64666B'
 ##############  Get Data  ##############
 # This dataset shows monthly averages, by day type (weekday, Saturday or Sunday/Holiday) 
 # and monthly totals for all CTA bus routes, back to 2001.
-bus_monthly_avg = pd.read_json("https://data.cityofchicago.org/resource/bynn-gwxy.json")
-bus_monthly_avg.head()
+# bus_monthly_avg = pd.read_json("https://data.cityofchicago.org/resource/bynn-gwxy.json")
+# bus_monthly_avg.head()
 
+# Current Employee Names, Salaries, and Position Titles
 employee_salary = pd.read_json("https://data.cityofchicago.org/resource/xzkq-xp2w.json")
 employee_salary.head()
 # this method limits to 1000 rows
@@ -45,4 +46,11 @@ with Socrata("data.cityofchicago.org", None) as client:
     results = client.get("xzkq-xp2w", limit=2000)
     employee_salary = pd.DataFrame.from_records(results)
     # need to get an app_token or suffer strict throttling limits
-    
+
+##############  Clean Data  ##############
+# count number of commas in name
+employee_salary['n_comma'] = employee_salary.name.str.count(',')
+freqit.oneway(employee_salary['n_comma']).freqtable()
+# 2000 recs all have one comma per name
+
+# split into first and last name
