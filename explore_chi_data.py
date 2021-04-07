@@ -54,3 +54,23 @@ freqit.oneway(employee_salary['n_comma']).freqtable()
 # 2000 recs all have one comma per name
 
 # split into first and last name
+employee_salary = employee_salary.merge(
+                    employee_salary.name.str.split(',',n=1, expand=True)
+                    ,left_index=True
+                    ,right_index=True
+                    ,how='outer')   \
+                    .rename(columns={0:'name_last'
+                                    ,1:'name_first'})
+
+# remove leading and trailing spaces from first name
+employee_salary['name_first'] = employee_salary.name_first.str.strip()
+
+
+
+
+# count non-alpha characters
+not_alpha_name = employee_salary.loc[~(employee_salary.name_first.str.isalpha())
+                                    ,'name_first']
+not_alpha_name
+employee_salary.head()
+
