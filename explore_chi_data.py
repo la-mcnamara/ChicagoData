@@ -80,7 +80,6 @@ not_alpha_name
 
 
 #####  examine and clean salary
-
 # why is typical hours an object
 freqit.oneway(esalary['typical_hours']).freqtable()
 

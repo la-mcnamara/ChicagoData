@@ -1,12 +1,18 @@
 # ChicagoData
-Analyses using Chicago Open Data
+Analyses using Chicago Open Data.
 
+## Goal of Analysis
+Assess whether city of chicago salary data varies by gender. Using the employee salary dataset posted by the city of chicago, identify gender of individual by mapping first name to social security name data. Then analyze salary.
+
+## Data Sources
+### City of Chicago Data
 Explore city of chicago data available here:
 https://data.cityofchicago.org/browse?limitTo=datasets
 
 Current Employee Names, Salaries, and Position Titles
 This dataset is a listing of all current City of Chicago employees, complete with full names, departments, positions, employment status (part-time or full-time), frequency of hourly employee –where applicable—and annual salaries or hourly rate. For hourly employees, the City is providing the hourly rate and frequency of hourly employees (40, 35, 20 and 10) to allow dataset users to estimate annual wages for hourly employees. Please note that annual wages will vary by employee, depending on number of hours worked and seasonal status. For information on the positions and related salaries detailed in the annual budgets, see https://www.cityofchicago.org/city/en/depts/obm.html
 
+### Social Security Name Data
 Social security baby name data is here:
 https://www.ssa.gov/oact/babynames/limits.html
 
