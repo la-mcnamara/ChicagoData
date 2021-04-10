@@ -15,6 +15,7 @@ import os
 import numpy as np 
 import freqit
 from sodapy import Socrata
+from pandas_profiling import ProfileReport
 
 # set working directory
 os.chdir("/Users/Lauren/Documents/Python/ChicagoData")
@@ -122,3 +123,5 @@ esalary.head()
 #   name_first - use to predict gender
 #   hourly_salary
 
+profile = ProfileReport(esalary, title="Pandas Profiling Report")
+profile
