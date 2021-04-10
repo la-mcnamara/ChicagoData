@@ -125,3 +125,12 @@ esalary.head()
 
 profile = ProfileReport(esalary, title="Pandas Profiling Report")
 profile
+
+# controls:
+#   job_titles: 30% police officer, none missing
+#   department: 42% police, none missing
+#   full_or_part_time: 96% full time (F), none missing
+#   salary_or_hourly: 79% salary, none missing
+# key fields;
+#   name_first: 2.7% Michael, none missing
+#   hourly_salary: mean 42.1, none missing
